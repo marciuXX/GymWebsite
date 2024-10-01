@@ -43,6 +43,7 @@ body {
   margin-bottom: 1.5em;
 }
 .header__heading-btn-link {
+  position: relative;
   padding: 0.5em 1em;
   font-size: 2rem;
   color: rgb(253, 253, 253);
@@ -50,8 +51,10 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 1s;
+  transition: background-color 1s, background-image 1s;
   text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
 }
 .header__heading-btn-link i {
   margin-left: 0.5em;
@@ -73,6 +76,9 @@ body {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.header__content-img--big {
+  display: none;
 }
 
 .nav-desktop {
@@ -155,6 +161,28 @@ body {
   transform: translate(-20px, -4px) rotatez(-45deg);
 }
 
+@media (min-width: 576px) {
+  .header__heading-title {
+    font-size: 4rem;
+  }
+  .header__heading-text {
+    font-size: 2.4rem;
+  }
+  .header__heading-btn-link {
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .header__heading {
+    padding: 1.5em 1em;
+  }
+  .header__heading-title {
+    font-size: 5rem;
+  }
+  .nav-mobile__link {
+    font-size: 3rem;
+  }
+}
 @media (min-width: 992px) {
   .header {
     display: grid;
@@ -171,11 +199,26 @@ body {
     align-items: start;
     padding: 2em;
   }
+  .header__content-img--mini {
+    display: none;
+  }
+  .header__content-img--big {
+    display: block;
+  }
   .header__heading {
     height: 100vh;
     grid-row: 2/4;
     grid-column: 1/2;
-    font-size: 4rem;
+    padding: 2em 1.5em;
+  }
+  .header__heading-title {
+    font-size: 5.5rem;
+  }
+  .header__heading-text {
+    font-size: 2.6rem;
+  }
+  .header__heading-btn-link {
+    font-size: 2.6rem;
   }
   .nav {
     grid-row: 1/2;
@@ -192,8 +235,37 @@ body {
     color: rgb(253, 253, 253);
     text-transform: uppercase;
     text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-desktop__link:hover {
+    color: #b3b3b3;
   }
   .nav .burger-btn {
     display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .header__heading-title {
+    font-size: 6rem;
+  }
+  .header__heading-text {
+    font-size: 2.6rem;
+  }
+  .header__heading-btn-link {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 1400px) {
+  .header__heading {
+    padding: 3em;
+  }
+  .header__heading-title {
+    font-size: 7rem;
+  }
+  .header__heading-text {
+    font-size: 3rem;
+  }
+  .header__heading-btn-link {
+    font-size: 3rem;
   }
 }/*# sourceMappingURL=main.css.map */
